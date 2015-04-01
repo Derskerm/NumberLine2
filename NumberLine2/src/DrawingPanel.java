@@ -60,14 +60,14 @@ public class DrawingPanel extends JPanel implements ControlListener {
 	
 	@Override
 	public void setFont(boolean bold, boolean italics, boolean underlined) {
-		int add = 0;
+		int style = 0;
 		if (bold) {
-			add += Font.BOLD;
+			style = style | Font.BOLD;
 		}
 		if (italics) {
-			add += Font.ITALIC;
+			style = style | Font.ITALIC;
 		}
-		font = new Font("Sans Serif", add, 16);
+		font = new Font("Sans Serif", style, 16);
 		if (underlined) {
 			Map<TextAttribute, Object> map = new Hashtable<TextAttribute, Object>();
 			map.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);
